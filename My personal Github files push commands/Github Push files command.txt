@@ -1,6 +1,6 @@
 1. git init (check default branch is main or master)
 
-If it is master by default, then we can that initDeafultBranch to main using:
+If it is master by default, then we can that initDefaultBranch to main using:
 
 git config --global init.defaultBranch main
 
@@ -16,3 +16,55 @@ git config --global init.defaultBranch main
 6. git pull origin main --allow-unrelated-histories
 
 7. git push -u origin main
+
+
+NOte: When we have to update our recent commit after it got pushed to main, then we can use:
+
+ - git commit --amend -m "Your updated commit message"
+ - git pull origin main 
+ - git push origin main 
+
+
+
+Note: Aapke local mein aapne galti se current branch pe kaam shuru kar diya tha, jisme pehle se kuch specific code tha jo us branch ke liye tha. Ab aapne apna next task bhi same branch pe shuru kar diya aur naya branch create karna bhool gaye.
+
+Ab aapko apna non-committed work is current branch se nayi branch pe transfer karna hai. Yeh karne ke liye, yeh steps follow karein:
+
+1. Apne current changes ko stash karo (jo abhi commit nahi kiye gaye hain):
+ 	
+	git stash
+
+2. Nayi branch create karo jo aapko apne next task ke liye chahiye:
+
+	git checkout -b <New-branch-name>
+
+3.*** Stash ko nayi branch pe apply karo: Isse aapke stash wale changes nayi branch pe apply ho jayenge.
+
+	git stash pop
+
+4. git status chalao
+
+
+Ab aapke non-committed work ko nayi branch pe transfer kar diya gaya hai.
+
+Agar aap purani branch se wo extra work hata bhi chahte hain, toh:
+
+1. Purani branch pe wapas jao
+
+	git checkout old-branch-name
+
+2. Purani branch ke changes reset karo : Isse purani branch ke sab uncommitted changes hata diye jayenge.
+
+	git reset --hard
+
+
+
+
+LinkedIn Icon: https://static.licdn.com/sc/h/3m4lyvbs6efg8pyhv7kupo6dh
+
+https://www.linkedin.com/oauth/v2/authorization?client_id=86klut9h7uzdm8&redirect_uri=https%3A%2F%2Fwww.g2.com%2Flinkedin_verify%2Fauth%2Flinkedin_verify%2Fcallback&response_type=code&scope=r_verify_details+r_basicprofile&state=fa277cf3af46d8d2f899457e1263668d482e57c4ca8d5d7e
+
+
+
+
+https://www.linkedin.com/oauth/v2/authorization?client_id=86c17zfbxuok2e&redirect_uri=https%3A%2F%2Fkylix.revispy.com&response_type=code&scope=r_verify_details+r_basicprofile&state=fa277cf3af46d8d2f899457e1263668d482e57c4ca8d5d7e
